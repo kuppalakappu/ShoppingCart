@@ -1,0 +1,31 @@
+.search{
+    height: 38px;
+    padding: 4px 8px;
+    margin: 4px 0;
+    color:gray;
+    width:90%;
+    border-radius: 10px;
+    border:1px solid grey;
+    outline: none;
+    &:focus{
+        border: 1px solid blue;
+    }
+}
+.searchBtn{
+    color:white;
+    height: 45px;
+    padding: 4px 8px;
+    background-color:blue;
+    width:100%;
+    border:none;
+    outline: none;
+    width: 10%;
+    border-radius:4px ;
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
