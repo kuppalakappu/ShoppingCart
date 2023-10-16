@@ -1,0 +1,31 @@
+<p class="header">Update Product</p>
+
+<div class="formControl">
+    <label>Title</label>
+    <input type="text" placeholder="Title" [(ngModel)]="title">
+</div>
+<div class="formControl">
+    <label>Price</label>
+    <input type="number" placeholder="Price" [(ngModel)]="price">
+</div>
+<div class="formControl">
+    <label>Description</label>
+    <input type="text" placeholder="Description" [(ngModel)]="description">
+</div>
+<div class="formControl">
+    <label>Image</label>
+    <input type="text" placeholder="Image" [(ngModel)]="image">
+</div>
+<div class="formControl">
+    <label>Category</label>
+    <input type="text" placeholder="Category" [(ngModel)]="category">
+</div>
+<div class="actionControl">
+    <button class="submitBtn" (click)="updateProduct()">Submit</button>
+    <button class="cancelBtn" (click)="cancelProduct()">Cancel</button>
+    </div>
+<div *ngIf="status">
+    <div class="status">
+        {{status}}
+    </div>
+</div>

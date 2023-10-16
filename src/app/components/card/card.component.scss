@@ -1,14 +1,33 @@
-.card{
-    border: 1px solid grey;
-    padding: 10px;
-    border-radius: 4px;
-    width:200px;
-    margin: 4px 0;
-    .cardTitle{
-        font-size: 16px;
-        font-weight: 800;
-    }
-    .cardBody{
-        font-size: 12px;
-    }
+@import "~@fortawesome/fontawesome-free/css/all.css";
+.card {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 4px;
+  width: 200px;
+  margin: 10px 0;
+  height: 100%;
+  .cardTitle {
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .cardBody {
+    font-size: 12px;
+    word-break: break-word;
+  }
+  .cardName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+  }
+  .fa-edit {
+    color: #0000ff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .fa-trash {
+    color: #ff0000;
+    font-size: 20px;
+    cursor: pointer;
+  }
 }

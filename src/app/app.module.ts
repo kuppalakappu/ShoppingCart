@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
 import { DashboardService } from './dashboard/dashboard.service';
 import { CardComponent } from './components/card/card.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { UpdateproductComponent } from './updateproduct/updateproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { CardComponent } from './components/card/card.component';
     PagenotfoundComponent,
     HeaderComponent,
     SearchbarComponent,
-    CardComponent
+    CardComponent,
+    PopupComponent,
+    UpdateproductComponent
   ],
   imports: [
     BrowserModule,

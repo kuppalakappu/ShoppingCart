@@ -1,5 +1,7 @@
 <app-header></app-header>
-<app-searchbar [searchData]="filterProducts"></app-searchbar>
-<div *ngFor="let item of allProducts" class="results">
-<app-card [cardTitle]="item.title" [cardBody]="item.description" [cardImg]="item.image"></app-card>
+<app-searchbar (searchEvent)="onSearch($event)"></app-searchbar>
+<div class="results">
+<div *ngFor="let item of allProducts" >
+<app-card [cardTitle]="item.title" [cardBody]="item.description" [cardImg]="item.image" [cardId]="item.id" (editEvent)="editProduct($event)"></app-card>
+</div>
 </div>
