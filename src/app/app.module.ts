@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { HeaderComponent } from './header/header.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { HeaderComponent } from './components/header/header.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from  '@angular/common/http';
-import { DashboardService } from './dashboard/dashboard.service';
+import { DashboardService } from './pages/dashboard/dashboard.service';
 import { CardComponent } from './components/card/card.component';
 import { PopupComponent } from './components/popup/popup.component';
-import { UpdateproductComponent } from './updateproduct/updateproduct.component';
+import { UpdateproductComponent } from './pages/updateproduct/updateproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
