@@ -1,0 +1,16 @@
+.nav{
+    width:150px;
+    height: 100%;
+    background-color: burlywood;
+    .navItem{
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 10px 0;
+        cursor: pointer;
+    }
+    .active{
+        background-color: brown;
+    }
+}

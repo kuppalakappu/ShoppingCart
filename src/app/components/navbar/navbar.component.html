@@ -1,0 +1,16 @@
+
+<div class="nav">
+        <div *ngFor="let item of navItems" >
+            <div *ngIf="selectedMenu===item">
+                <p  class="navItem active" (click)="selectMenu(item)">
+                {{item}}
+                </p>
+            </div>
+                <div *ngIf="selectedMenu!==item">
+                    <p class="navItem" (click)="selectMenu(item)">
+                    {{item}}
+                    </p>
+                </div>
+        </div>
+
+</div>

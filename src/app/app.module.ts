@@ -13,6 +13,7 @@ import { DashboardService } from './pages/dashboard/dashboard.service';
 import { CardComponent } from './components/card/card.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { UpdateproductComponent } from './pages/updateproduct/updateproduct.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { UpdateproductComponent } from './pages/updateproduct/updateproduct.comp
     SearchbarComponent,
     CardComponent,
     PopupComponent,
-    UpdateproductComponent
+    UpdateproductComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  allProducts: any = []
-  filteredProducts:any=[]
+  allProducts: any = [];
+  filteredProducts: any = [];
+  categories: any = [];
   constructor(
     private dashboardService: DashboardService,
     private router: Router
@@ -17,7 +18,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.dashboardService.getAllProducts().subscribe((res) => {
       this.allProducts = res;
-      this.filteredProducts=res;
+      this.filteredProducts = res;
+      this.categories = this.filteredProducts.map((ele: any) => ele.category);
+      this.categories = new Set<string>(this.categories);
     });
   }
   onSearch(searchKey: string) {
@@ -26,6 +29,11 @@ export class DashboardComponent implements OnInit {
     );
   }
   editProduct(id: number) {
-    this.router.navigate(['updateProduct/'+id]);
+    this.router.navigate(['updateProduct/' + id]);
+  }
+  filterBySelectedMenu(menu: string) {
+    this.filteredProducts = this.allProducts.filter(
+      (ele:any) => ele.category.toLowerCase() === menu.toLowerCase()
+    );
   }
 }
