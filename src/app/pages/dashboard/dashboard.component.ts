@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -12,7 +12,8 @@ export class DashboardComponent implements OnInit {
   categories: any = [];
   constructor(
     private dashboardService: DashboardService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
   searchData() {}
   ngOnInit() {
@@ -21,6 +22,9 @@ export class DashboardComponent implements OnInit {
       this.filteredProducts = res;
       this.categories = this.filteredProducts.map((ele: any) => ele.category);
       this.categories = new Set<string>(this.categories);
+      this.route.queryParams.subscribe((params: any) => {
+        this.filterBySelectedMenu(params['category']);
+      });
     });
   }
   onSearch(searchKey: string) {
@@ -33,7 +37,7 @@ export class DashboardComponent implements OnInit {
   }
   filterBySelectedMenu(menu: string) {
     this.filteredProducts = this.allProducts.filter(
-      (ele:any) => ele.category.toLowerCase() === menu.toLowerCase()
+      (ele: any) => ele.category.toLowerCase() === menu.toLowerCase()
     );
   }
 }
