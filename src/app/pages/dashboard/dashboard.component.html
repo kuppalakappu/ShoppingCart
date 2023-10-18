@@ -5,7 +5,7 @@
 <app-searchbar (searchEvent)="onSearch($event)"></app-searchbar>
 <div class="results">
 <div *ngFor="let item of filteredProducts" >
-<app-card [cardTitle]="item.title" [cardBody]="item.description" [cardImg]="item.image" [cardId]="item.id" (editEvent)="editProduct($event)"></app-card>
+<app-card [cardTitle]="item.title" [cardBody]="item.description" [cardImg]="item.image" [cardId]="item.id"></app-card>
 </div>
 </div>
 </div>

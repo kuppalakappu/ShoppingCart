@@ -32,9 +32,7 @@ export class DashboardComponent implements OnInit {
       ele.title.toLowerCase().includes(searchKey.toLowerCase())
     );
   }
-  editProduct(id: number) {
-    this.router.navigate(['updateProduct/' + id]);
-  }
+ 
   filterBySelectedMenu(menu: string) {
     this.filteredProducts = this.allProducts.filter(
       (ele: any) => ele.category.toLowerCase() === menu.toLowerCase()
