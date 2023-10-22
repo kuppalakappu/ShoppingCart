@@ -14,6 +14,8 @@ import { CardComponent } from './components/card/card.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { UpdateproductComponent } from './pages/updateproduct/updateproduct.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginService } from './pages/login/login.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CardComponent,
     PopupComponent,
     UpdateproductComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -34,8 +34,9 @@ export class DashboardComponent implements OnInit {
   }
  
   filterBySelectedMenu(menu: string) {
-    this.filteredProducts = this.allProducts.filter(
+    if(menu && menu.length)
+    this.filteredProducts =   this.allProducts.filter(
       (ele: any) => ele.category.toLowerCase() === menu.toLowerCase()
-    );
+    ) ;
   }
 }

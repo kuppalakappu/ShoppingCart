@@ -1,7 +1,26 @@
-.header{
-    color: blue;
-    font-size: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 400;
+.header {
+  color: blue;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logOutBtn {
+  color: white;
+  height: 100%;
+  padding: 10px 20px;
+  background-color: blue;
+  border: 1px solid blue;
+  border-right: none;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

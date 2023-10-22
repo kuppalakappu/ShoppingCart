@@ -1,0 +1,23 @@
+
+<div class="container">
+    <p class="header">Login</p>
+    
+    <div class="formControl">
+        <label>UserName</label>
+        <input type="text" placeholder="UserName" [(ngModel)]="username">
+    </div>
+    <div class="formControl">
+        <label>Password</label>
+        <input type="password" placeholder="Password" [(ngModel)]="password">
+    </div>
+
+    <div class="actionControl">
+        <button class="submitBtn" (click)="login()">Login</button>
+        <button class="cancelBtn" (click)="cancel()">Cancel</button>
+        </div>
+        <div *ngIf="invalidLogin">
+            <div class="status">
+                Invalid Login
+            </div>
+        
+        </div>
