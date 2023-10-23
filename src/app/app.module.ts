@@ -16,6 +16,8 @@ import { UpdateproductComponent } from './pages/updateproduct/updateproduct.comp
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './pages/login/login.service';
+import { JwtInterceptor} from './jwtinterceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { LoginService } from './pages/login/login.service';
     HttpClientModule
 
   ],
-  providers: [LoginService],
+  providers: [LoginService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
