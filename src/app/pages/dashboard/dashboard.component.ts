@@ -10,6 +10,10 @@ export class DashboardComponent implements OnInit {
   allProducts: any = [];
   filteredProducts: any = [];
   categories: any = [];
+  view: string = 'cards';
+  tableData:any=[]
+  tableHeaders:string[]=['image','title','description','price','rating'];
+  tableWidth:string[]=['10%','20%','50%','10%','10%'];
   constructor(
     private dashboardService: DashboardService,
     private router: Router,
@@ -18,8 +22,10 @@ export class DashboardComponent implements OnInit {
   searchData() {}
   ngOnInit() {
     this.dashboardService.getAllProducts().subscribe((res) => {
-      this.allProducts = res;
-      this.filteredProducts = res;
+      const data=Array.isArray(res) && res.map((entry:any)=>({...entry,rating:entry.rating.rate})) || [];
+      this.allProducts = data;
+      this.filteredProducts = data;
+      this.tableData=data
       this.categories = this.filteredProducts.map((ele: any) => ele.category);
       this.categories = new Set<string>(this.categories);
       this.route.queryParams.subscribe((params: any) => {
@@ -31,12 +37,15 @@ export class DashboardComponent implements OnInit {
     this.filteredProducts = this.allProducts.filter((ele: any) =>
       ele.title.toLowerCase().includes(searchKey.toLowerCase())
     );
+    this.tableData=this.filteredProducts;
   }
- 
+  setView(view: string) {
+    this.view = view;
+  }
   filterBySelectedMenu(menu: string) {
-    if(menu && menu.length)
-    this.filteredProducts =   this.allProducts.filter(
-      (ele: any) => ele.category.toLowerCase() === menu.toLowerCase()
-    ) ;
+    if (menu && menu.length)
+      this.filteredProducts = this.allProducts.filter(
+        (ele: any) => ele.category.toLowerCase() === menu.toLowerCase()
+      );
   }
 }

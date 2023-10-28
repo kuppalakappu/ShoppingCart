@@ -18,6 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './pages/login/login.service';
 import { JwtInterceptor} from './jwtinterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TableComponent } from './components/table/table.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     PopupComponent,
     UpdateproductComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

@@ -9,3 +9,25 @@
     display: flex;
     gap:10px;
 }
+
+.viewBtn{
+    display: flex;
+    margin-top: 10px;
+    justify-content: end;
+    margin-right: 20px;
+    button{
+        background-color: white;
+        color: blue;
+        font-size: 14px;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border:1px solid blue;
+    }
+
+    .active{
+        background-color: blue;
+        color: white;
+        
+    }
+}

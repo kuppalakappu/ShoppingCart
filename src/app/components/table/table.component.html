@@ -1,0 +1,15 @@
+<table>
+    <thead >
+            <th *ngFor="let entry of tableHeaders; index as i" [ngStyle]="{'width':tableWidth[i]}">{{entry}}</th>    
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of tableData">
+        <td *ngFor="let entry of tableHeaders; index as i"  [ngStyle]="{'width':tableWidth[i]}" >
+            <img  *ngIf="entry=='image'" src="{{row[entry]}}" />
+            <p  *ngIf="entry!=='image'">
+                {{row[entry]}}  
+            </p>
+        </td> 
+       </tr>
+    </tbody>
+</table>

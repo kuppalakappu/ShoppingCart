@@ -3,11 +3,22 @@
 <app-navbar [navItems]="categories" ></app-navbar>
 <div>
 <app-searchbar (searchEvent)="onSearch($event)"></app-searchbar>
-<div class="results">
+<div class="viewBtn">
+<button [ngClass]= "view==='cards' ? 'active': ''" (click)="setView('cards')">Cards</button>
+<button [ngClass]= "view==='table' ? 'active': ''" (click)="setView('table')">Table</button>
+</div>
+<div class="results" *ngIf="view==='cards'; then cards else table">
+
+</div>
+<ng-template #cards>
 <div *ngFor="let item of filteredProducts" >
 <app-card [cardTitle]="item.title" [cardBody]="item.description" [cardImg]="item.image" [cardId]="item.id"></app-card>
 </div>
-</div>
+</ng-template>
+
+<ng-template #table>
+ <app-table [tableData]="tableData" [tableHeaders]="tableHeaders" [tableWidth]="tableWidth"></app-table>
+</ng-template>
 </div>
 
 </div>
