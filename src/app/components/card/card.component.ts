@@ -10,8 +10,10 @@ export class CardComponent {
   @Input() cardTitle: string = '';
   @Input() cardImg: string = '';
   @Input() cardId: number = 0;
+  @Output() editEmitter=new EventEmitter<number>();
 constructor(private router:Router){}
   editEmit(){
-    this.router.navigate(['/updateProduct/'+this.cardId])
+    this.editEmitter.emit(this.cardId)
+ 
   }
 }

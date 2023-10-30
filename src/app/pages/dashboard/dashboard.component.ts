@@ -48,4 +48,8 @@ export class DashboardComponent implements OnInit {
         (ele: any) => ele.category.toLowerCase() === menu.toLowerCase()
       );
   }
+
+  editCard(id:number){
+    this.router.navigate(['/updateProduct/'+id])
+  }
 }
