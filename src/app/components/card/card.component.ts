@@ -7,9 +7,11 @@ import {Router} from '@angular/router';
 })
 export class CardComponent {
   @Input() cardBody: string = '';
+  @Input() cardStyle: string ='';
   @Input() cardTitle: string = '';
   @Input() cardImg: string = '';
   @Input() cardId: number = 0;
+  @Input() hideEdit?: boolean = false;
   @Output() editEmitter=new EventEmitter<number>();
 constructor(private router:Router){}
   editEmit(){

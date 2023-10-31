@@ -1,0 +1,4 @@
+<app-searchbar (searchEvent)="onSearch($event)"></app-searchbar>
+<div class="results">
+<app-card  *ngFor="let item of filteredCountries" [cardTitle]="item.name.official" [cardBody]="item.capital" [cardImg]="item.flags.png" [cardId]="item.id" (editEmitter)="editCard($event)" [hideEdit]="true" [cardStyle]="cardStyle"></app-card>
+</div>

@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UpdateproductComponent } from './pages/updateproduct/updateproduct.component';
 import { AuthGuard } from './auth.guard';
 import { AdsComponent } from './pages/ads/ads.component';
+import { CountriesComponent } from './pages/countries/countries.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: 'ads',
     component: AdsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'countries',
+    component: CountriesComponent,
     canActivate: [AuthGuard],
   },
   { path: '**', component: LoginComponent },

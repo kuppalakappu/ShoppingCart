@@ -1,9 +1,9 @@
-<div class="card">
+<div style={{cardStyle}} class="card"  >
     <img src={{cardImg}} width="100%"/>
 <div class="cardName">
     <p class="cardTitle">{{cardTitle}}</p>
-    <i class="fas fa-edit" (click)="editEmit()"></i>
-    <i class="fas fa-trash"></i>
+    <i *ngIf="!hideEdit" class="fas fa-edit" (click)="editEmit()"></i>
+    <i *ngIf="!hideEdit" class="fas fa-trash"></i>
 </div>
     <p class="cardBody">{{cardBody}}</p>
 </div>

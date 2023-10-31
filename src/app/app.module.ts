@@ -20,6 +20,8 @@ import { JwtInterceptor} from './jwtinterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TableComponent } from './components/table/table.component';
 import { AdsComponent } from './pages/ads/ads.component';
+
+import { CountriesComponent } from './pages/countries/countries.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { AdsComponent } from './pages/ads/ads.component';
     NavbarComponent,
     LoginComponent,
     TableComponent,
-    AdsComponent
+    AdsComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule,
