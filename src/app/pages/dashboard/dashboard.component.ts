@@ -52,4 +52,8 @@ export class DashboardComponent implements OnInit {
   editCard(id:number){
     this.router.navigate(['/updateProduct/'+id])
   }
+
+  clickCard(id:number){
+    this.router.navigate(['/productinfo/'+id])
+  }
 }

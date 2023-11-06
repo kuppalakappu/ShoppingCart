@@ -13,9 +13,14 @@ export class CardComponent {
   @Input() cardId: number = 0;
   @Input() hideEdit?: boolean = false;
   @Output() editEmitter=new EventEmitter<number>();
+  @Output() cardEmitter=new EventEmitter<number>();
 constructor(private router:Router){}
   editEmit(){
     this.editEmitter.emit(this.cardId)
+ 
+  }
+  cardEmit(){
+    this.cardEmitter.emit(this.cardId)
  
   }
 }

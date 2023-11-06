@@ -22,6 +22,7 @@ import { TableComponent } from './components/table/table.component';
 import { AdsComponent } from './pages/ads/ads.component';
 
 import { CountriesComponent } from './pages/countries/countries.component';
+import { ProductinfoComponent } from './pages/productinfo/productinfo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { CountriesComponent } from './pages/countries/countries.component';
     LoginComponent,
     TableComponent,
     AdsComponent,
-    CountriesComponent
+    CountriesComponent,
+    ProductinfoComponent
   ],
   imports: [
     BrowserModule,

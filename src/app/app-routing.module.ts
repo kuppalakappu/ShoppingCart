@@ -7,6 +7,7 @@ import { UpdateproductComponent } from './pages/updateproduct/updateproduct.comp
 import { AuthGuard } from './auth.guard';
 import { AdsComponent } from './pages/ads/ads.component';
 import { CountriesComponent } from './pages/countries/countries.component';
+import { ProductinfoComponent } from './pages/productinfo/productinfo.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -29,6 +30,14 @@ const routes: Routes = [
     component: CountriesComponent,
     canActivate: [AuthGuard],
   },
+
+  {
+    path: 'productinfo/:id',
+    component:  ProductinfoComponent,
+    canActivate: [AuthGuard],
+  },
+
+
   { path: '**', component: LoginComponent },
 ];
 
