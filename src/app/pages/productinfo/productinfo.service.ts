@@ -11,4 +11,14 @@ export class ProductInfoService {
       .get('https://fakestoreapi.com/products/'+id);
 
   }
+  addToCard(id:number){
+const payload = {
+  userId:1,
+  date:new Date(),
+  products:[{productId:id,quantity:1}]
+
+}
+    return this.http
+    .post("https://fakestoreapi.com/carts",payload)
+  }
 }

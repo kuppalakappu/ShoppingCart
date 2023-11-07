@@ -1,1 +1,34 @@
-<p>productinfo works!</p>
+<app-header></app-header>
+
+<div class = "container">
+ <img src = {{productInfo.image}}/> 
+ <div class = "desc" *ngIf="productInfo.title">
+    <div class= "entry" *ngFor="let entry of productLabels">
+        <p class = "label">
+        {{entry}}
+        </p>
+        <p class = "value">
+            {{productInfo[entry]}}
+        </p>
+    </div>
+    <div class= "entry" *ngFor="let item of productRate">
+        <p class = "label">
+            {{item}}
+            </p>
+            <p class = "value" *ngIf="item==='rate'">
+                <span *ngFor="let ele of counter(productInfo.rating[item])">
+                    <i   class="fa fa-star checked"></i>
+                    </span>
+            
+            </p>
+            <p class = "value" *ngIf="item!=='rate'">
+                {{productInfo.rating[item]}}
+            </p>
+
+    </div>
+    <button class="addToCartBtn" (click)="addToCart()">Add to Cart</button>
+    <div class="success"  *ngIf="cartUpdate">
+        Cart Updated Successfully
+    </div>
+ </div> 
+</div>
