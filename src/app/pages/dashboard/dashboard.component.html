@@ -13,7 +13,7 @@
 </div>
 <ng-template #cards>
     <div class="results">
-<app-card  *ngFor="let item of filteredProducts" [cardTitle]="item.title" [cardBody]="item.description" [cardImg]="item.image" [cardId]="item.id" (editEmitter)="editCard($event)" (cardEmitter)="clickCard($event)"></app-card>
+<app-card  *ngFor="let item of filteredProducts" [cardTitle]="item.title" [cardBody]="item.description" [cardImg]="item.image" [cardId]="item.id" (editEmitter)="editCard($event)" (cardEmitter)="clickCard($event)"  (deleteEmitter)="deleteCard($event)" ></app-card>
 </div>
 </ng-template>
 
@@ -23,3 +23,5 @@
 </div>
 
 </div>
+<app-popup  *ngIf = "showDeletePopup" [header] = "deletePopupHeader" [desc] = "deletepopupDesc" [id]="selectedProduct.id"  (applyEmitter)="applyCard($event)"  (cancelEmitter)="cancelCard($event)"></app-popup>
+

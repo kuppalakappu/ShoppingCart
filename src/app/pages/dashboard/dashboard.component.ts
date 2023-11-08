@@ -14,6 +14,10 @@ export class DashboardComponent implements OnInit {
   tableData:any=[]
   tableHeaders:string[]=['image','title','description','price','rating'];
   tableWidth:string[]=['10%','20%','50%','10%','10%'];
+  showDeletePopup :boolean = false;
+  deletePopupHeader:string = "delete product"
+  deletepopupDesc:string = "Are you sure you want to delete?"
+  selectedProduct:any;
   constructor(
     private dashboardService: DashboardService,
     private router: Router,
@@ -53,7 +57,21 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/updateProduct/'+id])
   }
 
+  deleteCard(id:number){
+this.selectedProduct = this.allProducts.filter((ele:any)=> ele.id == id)[0]
+    this.showDeletePopup = true;
+    
+  }
+
+
+
   clickCard(id:number){
     this.router.navigate(['/productinfo/'+id])
+  }
+  cancelCard(id:number){
+    this.showDeletePopup=false
+  }
+  applyCard(id:number){
+    this.dashboardService.deleteProduct(id).subscribe((res) => {this.showDeletePopup=false})
   }
 }

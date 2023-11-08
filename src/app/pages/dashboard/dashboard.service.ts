@@ -11,4 +11,10 @@ export class DashboardService {
       .get('https://fakestoreapi.com/products');
 
   }
+
+  deleteProduct(id:number) {
+    return this.http
+      .delete('https://fakestoreapi.com/products/'+id);
+
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-popup',
@@ -6,6 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
-header:string='ff'
-desc:string="jjj"
+@Input()header:string=''
+@Input()desc:string=""
+@Input()id:number=0
+@Output() applyEmitter=new EventEmitter<number>();
+@Output() cancelEmitter=new EventEmitter<number>();
+applyEmit(){
+  this.applyEmitter.emit(this.id)
+
+}
+
+cancelEmit(){
+  this.cancelEmitter.emit(this.id)
+
+}
 }
