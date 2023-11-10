@@ -9,6 +9,8 @@
   box-shadow: 2px 2px blue;
   img{
     cursor:pointer;
+    height:250px;
+    width:200px;
   }
   .cardTitle {
     font-size: 16px;
@@ -16,9 +18,13 @@
   }
   .cardBody {
     font-size: 12px;
-    word-break: break-word;
-    overflow: hidden;
-    max-height: 100px;
+     max-height: 100px;
+
+  overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+
+    
   }
   .cardName{
     display: flex;
