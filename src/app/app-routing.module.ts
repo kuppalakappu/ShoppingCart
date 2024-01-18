@@ -8,7 +8,9 @@ import { AuthGuard } from './auth.guard';
 import { AdsComponent } from './pages/ads/ads.component';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { ProductinfoComponent } from './pages/productinfo/productinfo.component';
+import { CartComponent } from './pages/cart/cart.component';
 const routes: Routes = [
+  { path: 'cart', component: CartComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'dashboard',

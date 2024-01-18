@@ -15,12 +15,18 @@
   .left{
     display: flex;
     gap:20px;
-    img{
-      width:50px;
-    }
+
   }
 }
+img{
+  width:50px;
+}
 
+.right{
+  display: flex;
+  gap:20px;
+  align-items: center;
+}
 .logOutBtn {
   color: white;
   height: 100%;

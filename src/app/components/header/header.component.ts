@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  cart='cart'
   constructor( private router: Router) {}
    logOut = () => {
     localStorage.removeItem("jwt");

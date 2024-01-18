@@ -15,5 +15,12 @@ export class LoginService {
     const parsedPayload = JSON.parse(payload);
     const isValid = parsedPayload.iat+(24 * 60 * 60 * 1000) > Date.now() / 1000; // added 24 hrs to issuing time & check if token is expired
     return isValid;
+
   }
+ logout(credentials:any)
+ {
+  return this.http.get("url",credentials)
+ }
+
 }
+

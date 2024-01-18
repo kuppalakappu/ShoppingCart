@@ -1,0 +1,5 @@
+
+<app-header></app-header>
+<div class="results">
+    <app-card  *ngFor="let item of cartItems" [cardImg]="item?.product?.image || ''" [cardTitle]="item.date" [cardBody]="item?.product?.title || '' +item.quantity" [hideEdit]="true"  ></app-card>
+    </div>

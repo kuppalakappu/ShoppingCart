@@ -23,6 +23,7 @@ import { AdsComponent } from './pages/ads/ads.component';
 
 import { CountriesComponent } from './pages/countries/countries.component';
 import { ProductinfoComponent } from './pages/productinfo/productinfo.component';
+import { CartComponent } from './pages/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { ProductinfoComponent } from './pages/productinfo/productinfo.component'
     TableComponent,
     AdsComponent,
     CountriesComponent,
-    ProductinfoComponent
+    ProductinfoComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

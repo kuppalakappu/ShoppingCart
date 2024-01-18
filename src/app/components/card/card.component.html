@@ -1,5 +1,5 @@
 <div style={{cardStyle}} class="card"  >
-    <img src={{cardImg}} width="100%"  (click)="cardEmit()"/>
+    <img *ngIf='cardImg' src={{cardImg}} width="100%"  (click)="cardEmit()"/>
 <div class="cardName">
     <p class="cardTitle">{{cardTitle}}</p>
     <i *ngIf="!hideEdit" class="fas fa-edit" (click)="editEmit()"></i>

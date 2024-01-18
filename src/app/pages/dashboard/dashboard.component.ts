@@ -25,11 +25,15 @@ export class DashboardComponent implements OnInit {
   ) {}
   searchData() {}
   ngOnInit() {
+    this.getAllProducts();
+  }
+
+  getAllProducts() {
     this.dashboardService.getAllProducts().subscribe((res) => {
-      const data=Array.isArray(res) && res.map((entry:any)=>({...entry,rating:entry.rating.rate})) || [];
+      const data = Array.isArray(res) && res.map((entry: any) => ({ ...entry, rating: entry.rating.rate })) || [];
       this.allProducts = data;
       this.filteredProducts = data;
-      this.tableData=data
+      this.tableData = data;
       this.categories = this.filteredProducts.map((ele: any) => ele.category);
       this.categories = new Set<string>(this.categories);
       this.route.queryParams.subscribe((params: any) => {
@@ -37,6 +41,8 @@ export class DashboardComponent implements OnInit {
       });
     });
   }
+
+
   onSearch(searchKey: string) {
     this.filteredProducts = this.allProducts.filter((ele: any) =>
       ele.title.toLowerCase().includes(searchKey.toLowerCase())
@@ -72,6 +78,6 @@ this.selectedProduct = this.allProducts.filter((ele:any)=> ele.id == id)[0]
     this.showDeletePopup=false
   }
   applyCard(id:number){
-    this.dashboardService.deleteProduct(id).subscribe((res) => {this.showDeletePopup=false})
+    this.dashboardService.deleteProduct(id).subscribe((res) => {this.showDeletePopup=false; this.getAllProducts();})
   }
 }
